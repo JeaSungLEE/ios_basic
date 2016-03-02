@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65543EBE1C86753600326502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65543EBD1C86753600326502 /* main.m */; };
+		65543EC61C86802F00326502 /* NXPen.m in Sources */ = {isa = PBXBuildFile; fileRef = 65543EC51C86802F00326502 /* NXPen.m */; };
+		65543ECC1C86819100326502 /* NXDisplayFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 65543ECB1C86819100326502 /* NXDisplayFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		65543EBA1C86753600326502 /* week1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = week1; sourceTree = BUILT_PRODUCTS_DIR; };
 		65543EBD1C86753600326502 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65543EC41C86802F00326502 /* NXPen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXPen.h; sourceTree = "<group>"; };
+		65543EC51C86802F00326502 /* NXPen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXPen.m; sourceTree = "<group>"; };
+		65543ECA1C86819100326502 /* NXDisplayFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDisplayFile.h; sourceTree = "<group>"; };
+		65543ECB1C86819100326502 /* NXDisplayFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDisplayFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				65543EBD1C86753600326502 /* main.m */,
+				65543EC41C86802F00326502 /* NXPen.h */,
+				65543EC51C86802F00326502 /* NXPen.m */,
+				65543ECA1C86819100326502 /* NXDisplayFile.h */,
+				65543ECB1C86819100326502 /* NXDisplayFile.m */,
 			);
 			path = week1;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				65543EBE1C86753600326502 /* main.m in Sources */,
+				65543ECC1C86819100326502 /* NXDisplayFile.m in Sources */,
+				65543EC61C86802F00326502 /* NXPen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
