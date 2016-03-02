@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NXDisplayFile : NSObject{
-    NSArray *_filelist;
 }
--(void)NXDisplayAllFilesAtPath:(NSString*)path;
--(void)filterByExtension:(NSString*)extension;
+-(void)NXDisplayAllFilesAtPath:(NSString*)path filterByExtension:(NSString*)extension;
 @end

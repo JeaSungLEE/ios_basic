@@ -10,15 +10,13 @@
 
 @implementation NXDisplayFile
 
--(void)NXDisplayAllFilesAtPath:(NSString*)path{
+-(void)NXDisplayAllFilesAtPath:(NSString*)path filterByExtension:(NSString*)extension{
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSArray *filelist = [fileManager contentsOfDirectoryAtPath: path error:NULL];
-    _filelist=filelist;
     NSLog(@"\n\nAllfilesList: %@ \n AllFilesListEnd",filelist);
-}
-
--(void) filterByExtension:(NSString*)extension{
-     NSArray *extensionList = [_filelist filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH %@",extension]];
+    
+    NSArray *extensionList = [filelist filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH %@",extension]];
     NSLog(@"\n\nextension List: %@ \n extensionListEnd",extensionList);
+
 }
 @end

@@ -54,7 +54,7 @@ int main(int argc, const char * argv[]) {
     [fourthBlackPen setUsage:40];
     
     NXDisplayFile *currentFiles = [[NXDisplayFile alloc]init];
-    [currentFiles NXDisplayAllFilesAtPath:@"/Users/JoyLee/Documents" ];
-    [currentFiles filterByExtension:@".mov"];
+    [currentFiles NXDisplayAllFilesAtPath:@"/Users/JoyLee/Documents"
+                        filterByExtension:@".mov"];
     return 0;
 }
