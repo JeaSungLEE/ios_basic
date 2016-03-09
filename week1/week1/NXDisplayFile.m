@@ -14,13 +14,15 @@
     NSFileManager * fileManager = [NSFileManager defaultManager];
     
     NSArray *shallowFileList = [fileManager contentsOfDirectoryAtPath:path error:nil];
-    NSArray *deepFileList = [fileManager subpathsOfDirectoryAtPath:path error:nil];
     NSLog(@"\n\n(shallow search)AllfilesList: %@ \n (shallow search)AllFilesListEnd",shallowFileList);
+    
+    NSArray *deepFileList = [fileManager subpathsOfDirectoryAtPath:path error:nil];
     NSLog(@"\n\n(Deep search)AllfilesList: %@ \n (Deep search)AllFilesListEnd",deepFileList);
     
     
     NSArray *shallowExtensionList = [shallowFileList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH %@",extension]];
     NSLog(@"\n\(Shallow search)nextension List: %@ \n (Shallow search)extensionListEnd",shallowExtensionList);
+    
     NSArray *deepExtensionList = [deepFileList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH %@",extension]];
     NSLog(@"\n\(Deep search)nextension List: %@ \n (Deep search)extensionListEnd",deepExtensionList);
 }
