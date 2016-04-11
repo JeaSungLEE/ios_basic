@@ -21,6 +21,13 @@
     
     UIButton *refresh = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
+    NSArray *udCardDeck = [[NSArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"cardDeck"]];
+    
+    if([udCardDeck count]==0){
+        [self buttonPressed];
+    }else{
+        [self showCard];
+    }
     
     refresh.frame = CGRectMake(600, 600, 200, 200);
     [refresh setTitle:[NSString stringWithFormat:@"refresh"]forState:UIControlStateNormal];
@@ -30,6 +37,8 @@
     [refresh addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchDown];
 }
 -(void)buttonPressed{
+    SolitaireDeck* solitaireDeck = [[SolitaireDeck alloc]init];
+    cardDeck = [solitaireDeck shuffleCards];
     [self showCard];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,7 +47,6 @@
 
 -(void)showCard{
     SolitaireDeck* solitaireDeck = [[SolitaireDeck alloc]init];
-    cardDeck = [solitaireDeck shuffleCards];
     [solitaireDeck displayCards];
     int pickCard;
     for(int i=0;i<7;i++){

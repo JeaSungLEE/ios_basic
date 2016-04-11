@@ -17,7 +17,7 @@
 }
 
 -(NSString*)pickCard{
-    int randPick=rand()%([cardDeck count]);
+    int randPick=arc4random_uniform([cardDeck count]);
     NSString *cardPick = [cardDeck objectAtIndex:randPick];
     [cardDeck removeObjectAtIndex:randPick];
     return cardPick;

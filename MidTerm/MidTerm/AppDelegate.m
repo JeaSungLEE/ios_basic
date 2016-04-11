@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  week5
+//  MidTerm
 //
-//  Created by 이재성 on 2016. 3. 30..
+//  Created by 이재성 on 2016. 4. 11..
 //  Copyright © 2016년 이재성. All rights reserved.
 //
 
@@ -16,10 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ViewController *vc = [[ViewController alloc]init];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:vc.cardDeck forKey:@"cardDeck"];
-    [userDefaults synchronize];
     // Override point for customization after application launch.
     return YES;
 }
@@ -30,10 +26,6 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    ViewController *vc = [[ViewController alloc]init];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:[vc cardDeck] forKey:@"cardDeck"];
-    [userDefaults synchronize];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -47,10 +39,6 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    ViewController *vc = [[ViewController alloc]init];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:vc.cardDeck forKey:@"cardDeck"];
-    [userDefaults synchronize];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
