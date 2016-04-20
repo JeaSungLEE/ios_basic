@@ -41,6 +41,7 @@
 		655475001CBB366300B51A88 /* JSAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655474FF1CBB366300B51A88 /* JSAlbumViewController.m */; };
 		655475031CBB368000B51A88 /* JSPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655475021CBB368000B51A88 /* JSPhotoViewController.m */; };
 		655475061CBB438100B51A88 /* JSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655475051CBB438100B51A88 /* JSTableViewCell.m */; };
+		65DAA9D21CC48BAA00150650 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DAA9D11CC48BAA00150650 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		655475021CBB368000B51A88 /* JSPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSPhotoViewController.m; sourceTree = "<group>"; };
 		655475041CBB438100B51A88 /* JSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTableViewCell.h; sourceTree = "<group>"; };
 		655475051CBB438100B51A88 /* JSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTableViewCell.m; sourceTree = "<group>"; };
+		65DAA9D01CC48BAA00150650 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		65DAA9D11CC48BAA00150650 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 				655475021CBB368000B51A88 /* JSPhotoViewController.m */,
 				655475041CBB438100B51A88 /* JSTableViewCell.h */,
 				655475051CBB438100B51A88 /* JSTableViewCell.m */,
+				65DAA9D01CC48BAA00150650 /* Reachability.h */,
+				65DAA9D11CC48BAA00150650 /* Reachability.m */,
 				6554749E1CBB335600B51A88 /* ViewController.h */,
 				6554749F1CBB335600B51A88 /* ViewController.m */,
 				655474A11CBB335600B51A88 /* Main.storyboard */,
@@ -389,6 +394,7 @@
 			files = (
 				655474FA1CBB344300B51A88 /* JSDataModel.m in Sources */,
 				655474A01CBB335600B51A88 /* ViewController.m in Sources */,
+				65DAA9D21CC48BAA00150650 /* Reachability.m in Sources */,
 				655475061CBB438100B51A88 /* JSTableViewCell.m in Sources */,
 				655475031CBB368000B51A88 /* JSPhotoViewController.m in Sources */,
 				6554749D1CBB335600B51A88 /* AppDelegate.m in Sources */,
@@ -621,6 +627,7 @@
 				655474C41CBB335600B51A88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		655474C51CBB335600B51A88 /* Build configuration list for PBXNativeTarget "MidTermTests" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +636,7 @@
 				655474C71CBB335600B51A88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		655474C81CBB335600B51A88 /* Build configuration list for PBXNativeTarget "MidTermUITests" */ = {
 			isa = XCConfigurationList;
@@ -637,6 +645,7 @@
 				655474CA1CBB335600B51A88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

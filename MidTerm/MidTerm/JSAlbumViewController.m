@@ -9,13 +9,21 @@
 #import "JSAlbumViewController.h"
 
 @interface JSAlbumViewController ()
-
+//{
+//    NSMutableData* imageData;
+//}
 @end
 
 @implementation JSAlbumViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//   imageData = [[NSMutableData alloc]initWithCapacity:10];
+//    NSString * urlString = @"http://125.209.194.123/demo/Image_100.jpg";
+//    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlString]];
+//    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+//    [connection start];
+    
     [self notificationAdd];
     [self indexSortArray];
     // Uncomment the following line to preserve selection between presentations.
@@ -33,11 +41,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)indexSortArray{
     JSDataModel* jsd = [[JSDataModel alloc]init];
+    [jsd jsonToUrl];
     [jsd jsonToArray];
     _itemArray = [jsd itemArray];
 }
+
 -(void)dateSortArray{
     JSDataModel* jsd = [[JSDataModel alloc]init];
     [jsd sortArray];
@@ -48,7 +59,7 @@
     if(event.type == UIEventSubtypeMotionShake)
     {
         [self indexSortArray];
-        [_tableViews reloadData];;
+        [_tableViews reloadData];
     }
 }
 
@@ -85,7 +96,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     JSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JSTableCell" forIndexPath:indexPath];
     
-    cell.backgroundImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[[_itemArray objectAtIndex:indexPath.row]objectForKey:@"image"]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://125.209.194.123/demo/%@",[[_itemArray objectAtIndex:indexPath.row] objectForKey:@"image"] ]];
+    NSData *image = [[NSData alloc]initWithContentsOfURL:url];
+    cell.backgroundImage.image = [UIImage imageWithData:image];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@",[[_itemArray objectAtIndex:indexPath.row]objectForKey:@"title" ]];
     cell.detailLabel.text = [NSString stringWithFormat:@"%@",[[_itemArray objectAtIndex:indexPath.row]objectForKey:@"date"]];
     return cell;

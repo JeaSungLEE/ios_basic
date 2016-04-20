@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reachability.h"
 
 @interface JSDataModel : NSObject
 
 @property() NSMutableArray* itemArray;
 -(void)jsonToArray;
 -(void)sortArray;
+-(void)jsonToUrl;
 @end
