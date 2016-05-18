@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MYView.h"
 @interface MYGesture : UIGestureRecognizer
-
+@property() NSMutableArray* axisPoint;
 @end

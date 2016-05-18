@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYGesture.h""
 @interface ViewController : UIViewController
 
 

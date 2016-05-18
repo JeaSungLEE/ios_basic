@@ -9,7 +9,7 @@
 #import "MYView.h"
 
 @implementation MYView
-@synthesize axisPoint,toRightDown,toLeftDown,toDown,toRight,toLeft,toRightUp;
+@synthesize axisPoint,toRightDown,toLeftDown,toDown,toRight,toLeft,toRightUp,toLeftUp,toUp;
 CGPoint StartPoint;
 CGPoint MovedPoint;
 
@@ -29,36 +29,15 @@ CGPoint MovedPoint;
     [path stroke];
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch=[[event allTouches]anyObject];
-    axisPoint=[[NSMutableArray alloc]init];
-    [axisPoint addObject:[NSValue valueWithCGPoint:[touch locationInView:touch.view]]];
-    [self setNeedsDisplay];
-}
-
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch=[[event allTouches]anyObject];
-    CGPoint nowPoint = [touches.anyObject locationInView:touch.view];
-    [axisPoint addObject:[NSValue valueWithCGPoint:[touch locationInView:touch.view]]];
-    [self checkDirection:nowPoint];
-    StartPoint=nowPoint;
-    [self setNeedsDisplay];
-}
-
--(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-}
-
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self checkNumber];
-    [self reset];
-    [self setNeedsDisplay];
-}
 
 -(void)checkNumber{
     StartPoint=[axisPoint[0] CGPointValue];
     MovedPoint=[axisPoint[axisPoint.count-1] CGPointValue];
     if(toDown==1&&(toRight==0||toLeft==0)){
         NSLog(@"1");
+    }
+    else if(toDown==2&&toUp==1&&toRight==1){
+        NSLog(@"6");
     }
     else if(toLeftDown==1&&toRight==2){
         NSLog(@"2");
@@ -78,14 +57,27 @@ CGPoint MovedPoint;
     self.toLeft=0;
     self.toRightUp=0;
     self.toDown=0;
+    self.toLeftUp=0;
+    self.toUp=0;
     self.left=NO;
+    self.leftUp=NO;
     self.right=NO;
     self.leftDown=NO;
     self.down=NO;
+    self.up=NO;
     self.rightUp=NO;
     self.rightDown=NO;
 }
 
+-(void)checkUp:(CGPoint)nowPoint{
+    if (nowPoint.y < StartPoint.y) {
+        if(!self.up){
+            self.up = YES;
+            self.down = NO;
+            toUp++;
+        }
+    }
+}
 -(void)checkDown:(CGPoint)nowPoint{
     if (nowPoint.y > StartPoint.y) {
         if(!self.down){
@@ -125,6 +117,16 @@ CGPoint MovedPoint;
     }
 }
 
+-(void)checkLeftUp:(CGPoint)nowPoint{
+    if (nowPoint.x < StartPoint.x && nowPoint.y < StartPoint.y) {
+        if(!self.leftUp){
+            self.leftUp = YES;
+            self.leftDown = NO;
+            toLeftUp++;
+        }
+    }
+}
+
 -(void)checkRightDown:(CGPoint)nowPoint{
     if (nowPoint.x > StartPoint.x && nowPoint.y > StartPoint.y) {
         if(!self.rightDown){
@@ -145,14 +147,20 @@ CGPoint MovedPoint;
     }
 }
 
+-(void)drawLine:(NSMutableArray*)axisPoint{
+    self.axisPoint=[[NSMutableArray alloc]initWithArray:axisPoint];
+    [self setNeedsDisplay];
+}
 
 -(void)checkDirection:(CGPoint)nowPoint{
     [self checkRightDown:nowPoint];
     [self checkLeftDown:nowPoint];
     [self checkRight:nowPoint];
+    [self checkUp:nowPoint];
     [self checkLeft:nowPoint];
     [self checkRightUp:nowPoint];
     [self checkDown:nowPoint];
+    [self checkLeftUp:nowPoint];
 }
 
 @end

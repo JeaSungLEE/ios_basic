@@ -16,6 +16,7 @@
 		6574045E1CD981DC007FAE01 /* week10Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6574045D1CD981DC007FAE01 /* week10Tests.m */; };
 		657404691CD981DC007FAE01 /* week10UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 657404681CD981DC007FAE01 /* week10UITests.m */; };
 		657404781CD981F8007FAE01 /* MYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657404771CD981F8007FAE01 /* MYView.m */; };
+		6574047E1CD9AAE9007FAE01 /* MYGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6574047D1CD9AAE9007FAE01 /* MYGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		6574046A1CD981DC007FAE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657404761CD981F8007FAE01 /* MYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYView.h; sourceTree = "<group>"; };
 		657404771CD981F8007FAE01 /* MYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYView.m; sourceTree = "<group>"; };
+		6574047C1CD9AAE9007FAE01 /* MYGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGesture.h; sourceTree = "<group>"; };
+		6574047D1CD9AAE9007FAE01 /* MYGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGesture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				657404471CD981DC007FAE01 /* AppDelegate.m */,
 				657404491CD981DC007FAE01 /* ViewController.h */,
 				6574044A1CD981DC007FAE01 /* ViewController.m */,
+				6574047C1CD9AAE9007FAE01 /* MYGesture.h */,
+				6574047D1CD9AAE9007FAE01 /* MYGesture.m */,
 				657404761CD981F8007FAE01 /* MYView.h */,
 				657404771CD981F8007FAE01 /* MYView.m */,
 				6574044C1CD981DC007FAE01 /* Main.storyboard */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6574047E1CD9AAE9007FAE01 /* MYGesture.m in Sources */,
 				657404781CD981F8007FAE01 /* MYView.m in Sources */,
 				6574044B1CD981DC007FAE01 /* ViewController.m in Sources */,
 				657404481CD981DC007FAE01 /* AppDelegate.m in Sources */,
@@ -504,6 +510,7 @@
 				6574046F1CD981DC007FAE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		657404701CD981DC007FAE01 /* Build configuration list for PBXNativeTarget "week10Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +519,7 @@
 				657404721CD981DC007FAE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		657404731CD981DC007FAE01 /* Build configuration list for PBXNativeTarget "week10UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +528,7 @@
 				657404751CD981DC007FAE01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

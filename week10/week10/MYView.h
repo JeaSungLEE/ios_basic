@@ -10,6 +10,7 @@
 
 @interface MYView : UIView
 
+-(void)drawLine:(NSMutableArray*)axisPoint;
 @property() NSMutableArray* axisPoint;
 @property() BOOL rightDown;
 @property() BOOL leftDown;
@@ -23,6 +24,8 @@
 @property() int toLeftDown;
 @property() int toRight;
 @property() int toRightUp;
+@property() int toLeftUp;
 @property() int toDown;
 @property() int toLeft;
+@property() int toUp;
 @end
