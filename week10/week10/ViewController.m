@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    MYGesture *myg=[[MYGesture alloc]init];
+    [self.view addGestureRecognizer:myg];
 }
 
 - (void)didReceiveMemoryWarning {

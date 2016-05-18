@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MYGesture.h
 //  week10
 //
 //  Created by 이재성 on 2016. 5. 4..
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MYGesture.h""
-@interface ViewController : UIViewController
-
-
+#import "MYView.h"
+@interface MYGesture : UIGestureRecognizer
+@property() NSMutableArray* axisPoint;
 @end
-
